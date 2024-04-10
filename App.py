@@ -2,8 +2,7 @@ import streamlit as st
 import nltk
 import spacy
 nltk.download('stopwords')
-# spacy.load('en_core_web_sm')
-
+spacy.load('en_core_web_sm')
 import pandas as pd
 import base64, random
 import time, datetime
@@ -81,7 +80,7 @@ def course_recommender(course_list):
     return rec_course
 
 
-connection = pymysql.connect(host='localhost', user='root', password='')
+connection = pymysql.connect(host='localhost', user='root', password='', db='sra')
 cursor = connection.cursor()
 
 
